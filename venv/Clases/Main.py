@@ -11,6 +11,12 @@ from BaseDatos import MetodosBD
 class Main(Gtk.Window):
 
     def __init__(self, initTipo, initId, initNombre):
+        """
+        Recibe la catergoría, el Id y el Nombre del Vendedor que inicio sesión
+        :param initTipo: Text
+        :param initId: Int
+        :param initNombre: Text
+        """
 
         Gtk.Window.__init__(self, title="Menu "+str(initNombre))
         self.set_default_size(600, 400)
@@ -57,18 +63,38 @@ class Main(Gtk.Window):
         self.show_all()
 
     def on_vendedores_clicked(self,Button):
+        """
+        Metodo para navegar a la ventana Vendedores
+        :param Button: Button
+        :return: Nothing
+        """
         vendedores = Vendedores.vendedores(self.tipo, self.id,self.nombre)
         self.set_visible(False)
 
     def on_seguros_clicked(self,Button):
+        """
+        Metodo para navegar a la ventana Seguros
+        :param Button: Button
+        :return: Nothing
+        """
         seguros = Seguros.seguros(self.tipo, self.id,self.nombre)
         self.set_visible(False)
 
     def on_configuracion_clicked(self,Button):
+        """
+        Metodo para navegar a la ventana Configuración
+        :param Button: Button
+        :return: Nothing
+        """
         confi = Configuracion.configuracion(self.tipo, self.id,self.nombre)
         self.set_visible(False)
 
     def on_cerrar_clicked(self,Button):
+        """
+        Metodo para navegar a la ventana Login
+        :param Button: Button
+        :return: Nothing
+        """
         login = Login.Login()
         self.set_visible(False)
 

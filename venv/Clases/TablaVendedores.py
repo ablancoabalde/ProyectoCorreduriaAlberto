@@ -16,6 +16,12 @@ from reportlab.graphics.charts.piecharts import Pie
 class tablaVendedores(Gtk.Window):
 
     def __init__(self, initTipo, initId, initNombre):
+        """
+        Recibe la catergoría, el Id y el Nombre del Vendedor que inicio sesión
+        :param initTipo: Text
+        :param initId: Int
+        :param initNombre: Text
+        """
 
         Gtk.Window.__init__(self, title="Seguros "+str(initNombre))
         self.set_default_size(600, 400)
@@ -170,6 +176,10 @@ class tablaVendedores(Gtk.Window):
 
 
     def actualizar_cmbDni(self):
+        """
+        Metodo que refresca la información de los Combobox
+        :return: Nothing
+        """
 
         self.cbDniBuscar.remove_all()
         dnis= MetodosBD.MetodosBD.listar_dni_vendedores(self)
@@ -179,10 +189,23 @@ class tablaVendedores(Gtk.Window):
 
 
     def on_celdaText_edited(self,control,punteiro,texto, modelo):
+        """
+        Metodo que permite seleccionar el TreeView para obtener los datos
+        :param control: TreeView
+        :param punteiro: Posición
+        :param texto: Text
+        :param modelo: Formato de la tabla
+        :return: Nothing
+        """
         modelo[punteiro][0]=texto
 
 
     def on_mostrar_click(self, control):
+        """
+        Muestra la información sacada todos los vendedores de la base de datos en el TreeView
+        :param control: Button
+        :return: Nothing
+        """
 
         self.modelo.clear()
         datos = MetodosBD.MetodosBD.listar_vendedores(self)
@@ -201,6 +224,11 @@ class tablaVendedores(Gtk.Window):
 
 
     def on_consultaCB_clicked(self,control):
+        """
+        Muestra la información sacada de la base de datos sacada por el Dni en el TreeView
+        :param control: Button
+        :return: Nothing
+        """
 
         dniSelect = self.cbDniBuscar.get_active_text()
 
@@ -220,6 +248,11 @@ class tablaVendedores(Gtk.Window):
             self.modelo.append([d1, d2, d3, d4, d5, d6, d7, d8, d9])
 
     def on_consultaTxt_clicked(self, control):
+        """
+        Muestra la información sacada de la base de datos por el nombre del Vendedor en el TreeView
+        :param control: Button
+        :return: Nothing
+        """
 
         self.modelo.clear()
         nombreSelect = self.txtNombre.get_text()
@@ -243,6 +276,11 @@ class tablaVendedores(Gtk.Window):
             self.modelo.clear()
 
     def on_crearPdf_click(self,control):
+        """
+        Metodo que crea un pdf que contiene una gráfica con las ventas de los vendedores
+        :param control: Button
+        :return: Nothing
+        """
         guion = []
 
         d = Drawing(500, 300)
@@ -300,7 +338,11 @@ class tablaVendedores(Gtk.Window):
         doc.build(guion)
 
     def on_cerrar_clicked(self,Button):
-
+        """
+        Metodo para navegar a la ventana Vendedores
+        :param Button: Button
+        :return: Nothing
+        """
         vendedores = Vendedores.vendedores(self.tipo, self.id,self.nombre)
         self.set_visible(False)
 

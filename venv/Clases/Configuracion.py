@@ -8,6 +8,12 @@ from BaseDatos import MetodosBD
 class configuracion(Gtk.Window):
 
     def __init__(self, initTipo, initId, initNombre):
+        """
+        Recibe la catergoría, el Id y el Nombre del Vendedor que inicio sesión
+        :param initTipo: Text
+        :param initId: Int
+        :param initNombre: Text
+        """
 
         Gtk.Window.__init__(self, title="Configuración " +str(initNombre))
         self.set_default_size(600, 400)
@@ -73,6 +79,13 @@ class configuracion(Gtk.Window):
         self.show_all()
 
     def on_add_clicked(self, control):
+        """
+        Función que llama otros metodos para validar la insercción de los datos, primero se
+        autentifica que los Entrys estén llenos. Luego se llama al metodo insertar de la Clase
+        MetodosBD y por último se llama al metodo limpiar para limpiar Entrys
+        :param control: Button
+        :return: Nothing
+        """
 
         # Envio texto de Botón para que en el Metodo de la Clase MetodoBD insertar
         # sepa si tiene que insertar o modificar
@@ -96,6 +109,11 @@ class configuracion(Gtk.Window):
         # Metodo que valida que todas los Entry tengan contenido y devuelve un boolean
 
     def on_autentificar(self,password):
+        """
+        Valida que la Entry tenga contenido
+        :param password: Text
+        :return: Variable booleana
+        """
         condicion = True
 
         if password == '':
@@ -107,6 +125,11 @@ class configuracion(Gtk.Window):
 
     # Medoto que limpia las cajas de texto
     def on_limpiar(self, control):
+        """
+        Metodo que limpia los Entrys
+        :param control: Button
+        :return: Nothing
+        """
 
 
         self.txtPassword.set_text("")
@@ -115,6 +138,11 @@ class configuracion(Gtk.Window):
 
 
     def on_cerrar_clicked(self,Button):
+        """
+        Metodo para navegar a la ventana Main
+        :param Button: Button
+        :return: Nothing
+        """
         main=Main.Main(self.tipo, self.id,self.nombre )
         self.set_visible(False)
 

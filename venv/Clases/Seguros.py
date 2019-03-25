@@ -10,6 +10,12 @@ from Clases import TablaSeguros,Main
 class seguros(Gtk.Window):
 
     def __init__(self, initTipo, initId, initNombre):
+        """
+        Recibe la catergoría, el Id y el Nombre del Vendedor que inicio sesión
+        :param initTipo: Text
+        :param initId: Int
+        :param initNombre: Text
+        """
 
         Gtk.Window.__init__(self, title="Seguros "+str(initNombre))
         self.set_default_size(600, 400)
@@ -195,6 +201,13 @@ class seguros(Gtk.Window):
     """
 
     def on_add_clicked(self, control):
+        """
+        Función que llama otros metodos para validar la insercción de los datos, primero se
+        autentifica que los Entrys estén llenos. Luego se llama al metodo insertar de la Clase
+        MetodosBD, se actualizan los comboBox y por último se llama al metodo limpiar para limpiar Entrys
+        :param control: Button
+        :return: Nothing
+        """
 
 
         # Envio texto de Botón para que en el Metodo de la Clase MetodoBD insertar
@@ -226,6 +239,16 @@ class seguros(Gtk.Window):
 
     # Metodo que valida que todas los Entry tengan contenido y devuelve un boolean
     def on_autentificar(self, dniCliente,nombreCliente,apellidoCliente, seguro, coste,tiempo):
+        """
+        Valida que la Entry tenga contenido
+        :param dniCliente: Text
+        :param nombreCliente: Text
+        :param apellidoCliente: Text
+        :param seguro: Text
+        :param coste: Int
+        :param tiempo: Int
+        :return: Variable booleana
+        """
         condicion = True
 
         if dniCliente == '':
@@ -250,8 +273,14 @@ class seguros(Gtk.Window):
         return condicion
 
     # Metodo que tras elegir un Dni del ComboBOx manda el Dni a un metodo
-    # de la Clase MetodosBD que busca el Dni y devuelve los datos de este
+    # de la Clase MetodosBD que busca el Id y devuelve los datos de este
     def update_seguro(self, control):
+        """
+        Metodo que tras elegir un Dni del ComboBOx manda el Dni a un metodo
+        de la Clase MetodosBD que busca el Id y devuelve los datos de este
+        :param control: Button
+        :return: Nothing
+        """
 
         # Sacamos el texto seleccionado del ComboBox
         idSelect = self.cbIdSeguroAdd.get_active_text()
@@ -270,8 +299,11 @@ class seguros(Gtk.Window):
 
     # Metodo que separa los datos recogidos y luego los guarda en sus respectivos Entrys
     def on_mostrarDatos(self, datos):
-
-
+        """
+        Metodo que separa los datos recogidos y luego los guarda en sus respectivos Entrys
+        :param datos: Lista de datos
+        :return: Nothing
+        """
         self.txtDniCliente.set_text(datos[0][3])
         self.txtNombreCliente.set_text(datos[0][4])
         self.txtApellidoCliente.set_text(datos[0][5])
@@ -282,11 +314,20 @@ class seguros(Gtk.Window):
 
     # Metodo que recarga el valor de la fecha en el Entry Fecha
     def on_refreshTime(self, control):
+        """
+        Metodo que recarga el valor de la fecha en el Entry Fecha
+        :param control: Button
+        :return: Noting
+        """
 
         self.txtFecha.set_text(str(self.localTime))
 
     # Metodo que refresca la información de los Combobox
     def actualizar_cmbId(self):
+        """
+        Metodo que refresca la información de los Combobox
+        :return: Nothing
+        """
 
         # Eliminamos primero todos los datos de los comboBox
         self.cbIdSeguroAdd.remove_all()
@@ -300,8 +341,15 @@ class seguros(Gtk.Window):
             self.cbIdSeguroRemove.append_text(str(rexistro[0]))
 
     # Metodo que envia el Dni seleccionado a un Metodo de la Clase MetodosBD y elimina de
-    # la base de datos al vendedor
+    # la base de datos al seguro
     def on_remove_clicked(self, control):
+        """
+        Metodo que envia el Dni seleccionado a un Metodo de la Clase MetodosBD y elimina de
+        la base de datos al seguro, luego llama al metodo recarga los ComboBox y
+        al de limpiar los Entrys
+        :param control: Button
+        :return: Nothin
+        """
 
         # Recogemos el valor del ComboBox
         idBaja = self.cbIdSeguroRemove.get_active_text()
@@ -314,6 +362,11 @@ class seguros(Gtk.Window):
 
     # Medoto que limpia las cajas de texto
     def on_limpiar(self, control):
+        """
+        Medoto que limpia las cajas de texto
+        :param control: Button
+        :return: Nothing
+        """
 
         self.btnAdd.set_label(self.vbtnAdd)
         self.txtDniCliente.set_text("")
@@ -335,11 +388,21 @@ class seguros(Gtk.Window):
 
     # Metodo que abre la Clase Main y se oculta a sí mista
     def on_cerrar_clicked(self, Button):
+        """
+        Metodo para navegar a la ventana Main
+        :param Button: Button
+        :return: Nothing
+        """
         main = Main.Main(self.tipo, self.id,self.nombre)
         self.set_visible(False)
 
     # Metodo que abre la Clase TablaVendedores y se oculta a sí mista
     def on_tabla_vendedores_clicked(self, Button):
+        """
+        Metodo para navegar a la ventana TablaSeguros
+        :param Button: Button
+        :return: Nothing
+        """
         tablaseguros = TablaSeguros.tablaSeguros(self.tipo, self.id,self.nombre)
         self.set_visible(False)
 

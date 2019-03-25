@@ -83,8 +83,8 @@ class MetodosBD:
     #Metodo para agregar un nuevo vendedor a la base de datos
     def insert_vendedor(self,accion,dni,tipo,nombre,apellidos,telf,zona,nacionalidad,fecha,ventas):
         """
-        Metodo para insertar en la base de datos, la variable acción se utiliza para que con un botón
-        dependiendo del texto que tenga puedas o insertar o modificar un vendedor.
+        Metodo para insertar un vendedor en la base de datos, la variable acción se utiliza para que con un botón
+        dependiendo del texto que tenga puedas insertar o modificar un vendedor.
         Por defecto a todos los vendedores nuevos le pone la contraseá 1234, que luego cuando se
         logueen ellos puedan cambiar
         :param accion: Text
@@ -194,7 +194,7 @@ class MetodosBD:
         Metodo con tres funciones primero recupera los Id de los vendedores
         luego recorre esos Id cada Id lo envía a otro medodo que con ese Id sabe que cuantos seguros
         vendio y el total que lleva ganado y por último actualiza la información de los vendedores
-        :return:
+        :return: Nothing
         """
         try:
             cursor = MetodosBD.conectar(self)
@@ -227,13 +227,18 @@ class MetodosBD:
 
     #Metodo para buscar los datos de un vendedor a partir de su DNI
     def buscar_vendedor(self,dni):
+        """
+        Metodo que devuelve todos los datos de un vendedor que busca por su DNI
+        :param dni: Text
+        :return: Una lista con todos los datos del vendedor
+        """
 
         try:
 
             cursor=MetodosBD.conectar(self)
             if not dni==None:
                 resultados =cursor.execute("SELECT * from Vendedores where Dni='"+dni+"'")
-                datos=tuple(resultados.fetchall())
+                datos=resultados.fetchall()
                 return datos
 
             MetodosBD.cerrar(self)
@@ -245,7 +250,11 @@ class MetodosBD:
         # Metodo para buscar los datos de un vendedor a partir de su DNI
 
     def buscar_vendedor_id(self, id):
-
+        """
+        Metodo que devuelve el nombre de un vendedor buscado por su Id
+        :param dni: Text
+        :return: Una lista con el nombre vendedor
+        """
         try:
 
             cursor = MetodosBD.conectar(self)
@@ -264,7 +273,11 @@ class MetodosBD:
 
     # Metodo para buscar los datos de un vendedor a partir de su nombre
     def buscar_vendedor_nombre(self,nombre):
-
+        """
+        Metodo que devuelve los datos de un vendedor buscado por caracteres en la categoría nombre
+        :param dni: Text
+        :return: Una lista con toda la información del vendedor encontrado
+        """
         try:
 
             cursor=MetodosBD.conectar(self)
@@ -289,6 +302,21 @@ class MetodosBD:
     # Metodo para agregar un nuevo seguro a la base de datos
 
     def insert_seguros(self,idSeguro, accion, seguro, idVendedor, dniCliente,nombreCliente,apellidosCliente, tiempo, coste, fecha):
+        """
+        Metodo para insertar un seguro en la base de datos, la variable acción se utiliza para que con un botón
+        dependiendo del texto que tenga puedas insertar o modificar un seguro.
+        :param idSeguro: Int
+        :param accion: Text
+        :param seguro: Text
+        :param idVendedor: Int
+        :param dniCliente: Text
+        :param nombreCliente: Text
+        :param apellidosCliente: Text
+        :param tiempo: Int
+        :param coste: Int
+        :param fecha: Text
+        :return: Nothing
+        """
         self.vbtnAdd = "Añadir seguro"
 
         if self.vbtnAdd == accion:
@@ -323,6 +351,12 @@ class MetodosBD:
     # Metodo para eliminar un seguro de la base de datos
 
     def borrar_Seguro(self, idSeguro):
+        """
+        Metodo para eliminar un seguro de la base de datos, recibe como parametro de busqueda el Id
+        del seguro
+        :param dni: Text
+        :return: Nothing
+        """
 
         try:
 
@@ -337,10 +371,14 @@ class MetodosBD:
     # Metodo para listar los Seguros
 
     def listar_seguros(self):
+        """
+        Metodo que lista todos los seguros de la base de datos y toda su información
+        :return: Nothing
+        """
         try:
             cursor = MetodosBD.conectar(self)
             resultados = cursor.execute("SELECT * from Seguros")
-            seguros = tuple(resultados.fetchall())
+            seguros = resultados.fetchall()
             MetodosBD.cerrar(self)
 
             return seguros
@@ -351,10 +389,14 @@ class MetodosBD:
         # Metodo para listar los Ids de los Seguros
 
     def listar_id_seguros(self):
+        """
+        Metodo que lista todos los Id de los seguros de la base de datos
+        :return: Nothing
+        """
         try:
             cursor = MetodosBD.conectar(self)
             resultados = cursor.execute("SELECT Id from Seguros")
-            idSeguros = tuple(resultados.fetchall())
+            idSeguros = resultados.fetchall()
             MetodosBD.cerrar(self)
 
             return idSeguros
@@ -365,13 +407,17 @@ class MetodosBD:
         # Metodo para buscar los datos de un seguro a partir de su Id
 
     def buscar_seguros(self, id):
-
+        """
+        Metodo que busca toda la información de un Seguro buscado por su Id
+        :param id: Int
+        :return: Una lista con todos los datos del seguro encontrado
+        """
         try:
 
             cursor = MetodosBD.conectar(self)
             if not id == None:
                 resultados = cursor.execute("SELECT * from Seguros where Id='" + id + "'")
-                datos = tuple(resultados.fetchall())
+                datos = resultados.fetchall()
                 return datos
 
             MetodosBD.cerrar(self)
@@ -384,13 +430,18 @@ class MetodosBD:
     # Metodo para buscar los datos de un cliente a partir de su nombre
 
     def buscar_seguro_nombre_cliente(self, nombre):
+        """
+        Metodo que devuelve los datos de un seguro buscado por caracteres en la categoría nombreCliente
+        :param nombre: Text
+        :return: una list con la toda la información del seguro
+        """
 
         try:
 
             cursor = MetodosBD.conectar(self)
             if not nombre == None:
                 resultados = cursor.execute("SELECT * from Seguros where NombreCliente LIKE'" + nombre + "%'")
-                datos = tuple(resultados.fetchall())
+                datos = resultados.fetchall()
                 return datos
 
             MetodosBD.cerrar(self)
@@ -401,6 +452,11 @@ class MetodosBD:
             print("Error al comprobar el tipo: " + str(errorBuscarVendedor))
 
     def sumar_seguros(self,idVendedor):
+        """
+        mMetodo que suma las cantidades de los seguros cuya referencia tengan el mismo Id de vendedore
+        :param idVendedor: Int
+        :return: Un valor float
+        """
         self.sumaT=0
         try:
 
@@ -408,7 +464,7 @@ class MetodosBD:
             cursor = MetodosBD.conectar(self)
 
             resultados = cursor.execute("SELECT Coste from Seguros where IdVendedor='" + idV + "'")
-            datos = tuple(resultados.fetchall())
+            datos = resultados.fetchall()
 
             for dato in datos:
                 self.sumaT = self.sumaT+dato[0]
@@ -425,6 +481,14 @@ class MetodosBD:
     # Metodos Ventana Configuracion
 
     def insert_user_password(self,accion,nombre,password):
+        """
+        Metodo para insertar un Usuario en la base de datos, la variable acción se utiliza para que con un botón
+        dependiendo del texto que tenga puedas insertar o modificar un Usuario.
+        :param accion: Text
+        :param nombre: Text
+        :param password: Text
+        :return: Nothing
+        """
         self.vbtnAdd = "Dar de alta"
 
         if self.vbtnAdd == accion:

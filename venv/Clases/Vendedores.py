@@ -10,6 +10,12 @@ from Clases import TablaVendedores, Main
 class vendedores(Gtk.Window):
 
     def __init__(self, initTipo, initId, initNombre):
+        """
+        Recibe la catergoría, el Id y el Nombre del Vendedor que inicio sesión
+        :param initTipo: Text
+        :param initId: Int
+        :param initNombre: Text
+        """
 
         Gtk.Window.__init__(self, title="Vendedores " + str(initNombre))
         self.set_default_size(600, 400)
@@ -217,6 +223,13 @@ class vendedores(Gtk.Window):
     """
 
     def on_add_clicked(self, control):
+        """
+        Función que llama otros metodos para validar la insercción de los datos, primero se
+        autentifica que los Entrys estén llenos. Luego se llama al metodo insertar de la Clase
+        MetodosBD se actualizan los comboBox y por último se llama al metodo limpiar para limpiar Entrys
+        :param control: Button
+        :return: Nothing
+        """
 
         vendedores.on_opcion_clicked(self, control, self.rbJefe)
         # Envio texto de Botón para que en el Metodo de la Clase MetodoBD insertar
@@ -249,6 +262,16 @@ class vendedores(Gtk.Window):
 
     # Metodo que valida que todas los Entry tengan contenido y devuelve un boolean
     def on_autentificar(self, dni, nom, apellidos, telf, zona, nacion):
+        """
+        Valida que la Entry tenga contenido
+        :param dni: Text
+        :param nom: Text
+        :param apellidos: Text
+        :param telf: Text
+        :param zona: Text
+        :param nacion: Text
+        :return: Variable booleana
+        """
         condicion = True
 
         if dni == '':
@@ -275,6 +298,12 @@ class vendedores(Gtk.Window):
     # Metodo que tras elegir un Dni del ComboBOx manda el Dni a un metodo
     # de la Clase MetodosBD que busca el Dni y devuelve los datos de este
     def update_vendedor(self, control):
+        """
+        Metodo que tras elegir un Dni del ComboBOx manda el Dni a un metodo
+        de la Clase MetodosBD que busca el Dni y devuelve los datos de este
+        :param control: Button
+        :return: Nothing
+        """
 
         # Sacamos el texto seleccionado del ComboBox
         dniSelect = self.cbDniAdd.get_active_text()
@@ -293,6 +322,11 @@ class vendedores(Gtk.Window):
 
     # Metodo que separa los datos recogidos y luego los guarda en sus respectivos Entrys
     def on_mostrarDatos(self, datos):
+        """
+        Metodo que separa los datos recogidos y luego los guarda en sus respectivos Entrys
+        :param datos: Lista de datos
+        :return: Nothing
+        """
 
         # Condición que cambia los estados de los RadioButons
         if datos[0][1] == self.tipo1:
@@ -312,11 +346,20 @@ class vendedores(Gtk.Window):
 
     # Metodo que recarga el valor de la fecha en el Entry Fecha
     def on_refreshTime(self, control):
+        """
+        Metodo que recarga el valor de la fecha en el Entry Fecha
+        :param control: Button
+        :return: Noting
+        """
 
         self.txtFecha.set_text(str(self.localTime))
 
     # Metodo que refresca la información de los Combobox
     def actualizar_cmbDni(self):
+        """
+        Metodo que refresca la información de los Combobox
+        :return: Nothing
+        """
 
         # Eliminamos primero todos los datos de los comboBox
         self.cbDniAdd.remove_all()
@@ -332,6 +375,13 @@ class vendedores(Gtk.Window):
     # Metodo que envia el Dni seleccionado a un Metodo de la Clase MetodosBD y elimina de
     # la base de datos al vendedor
     def on_remove_clicked(self, control):
+        """
+        Metodo que envia el Dni seleccionado a un Metodo de la Clase MetodosBD y elimina de
+        la base de datos al vendedor, luego llama al metodo recarga los ComboBox y
+        al de limpiar los Entrys
+        :param control: Button
+        :return: Nothin
+        """
 
         # Recogemos el valor del ComboBox
         dniBaja = self.cbDniRemove.get_active_text()
@@ -344,6 +394,11 @@ class vendedores(Gtk.Window):
 
     # Medoto que limpia las cajas de texto
     def on_limpiar(self, control):
+        """
+        Medoto que limpia las cajas de texto
+        :param control: Button
+        :return: Nothing
+        """
 
         self.btnAdd.set_label(self.vbtnAdd)
         self.txtDni.set_text("")
@@ -362,11 +417,21 @@ class vendedores(Gtk.Window):
 
     # Metodo que abre la Clase Main y se oculta a sí mista
     def on_cerrar_clicked(self, Button):
+        """
+        Metodo para navegar a la ventana Main
+        :param Button: Button
+        :return: Nothing
+        """
         main = Main.Main(self.tipo, self.id, self.nombre)
         self.set_visible(False)
 
     # Metodo que abre la Clase TablaVendedores y se oculta a sí mista
     def on_tabla_vendedores_clicked(self, Button):
+        """
+        Metodo para navegar a la ventana TablaVendedores
+        :param Button: Button
+        :return: Nothing
+        """
         tablavendedores = TablaVendedores.tablaVendedores(self.tipo, self.id, self.nombre)
         self.set_visible(False)
 

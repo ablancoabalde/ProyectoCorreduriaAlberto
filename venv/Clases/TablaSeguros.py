@@ -10,6 +10,12 @@ from reportlab.pdfgen import canvas
 class tablaSeguros(Gtk.Window):
 
     def __init__(self, initTipo, initId, initNombre):
+        """
+        Recibe la catergoría, el Id y el Nombre del Vendedor que inicio sesión
+        :param initTipo: Text
+        :param initId: Int
+        :param initNombre: Text
+        """
 
         Gtk.Window.__init__(self, title="Seguros "+str(initNombre))
         self.set_default_size(600, 400)
@@ -162,6 +168,10 @@ class tablaSeguros(Gtk.Window):
         # Metodo que refresca la información de los Combobox
 
     def actualizar_cmbId(self):
+        """
+        Metodo que refresca la información de los Combobox
+        :return: Nothing
+        """
 
         # Eliminamos primero todos los datos de los comboBox
         self.cbIdBuscar.remove_all()
@@ -176,16 +186,29 @@ class tablaSeguros(Gtk.Window):
 
 
     def on_celdaText_edited(self,control,punteiro,texto, modelo):
+        """
+        Metodo que permite seleccionar el TreeView para obtener los datos
+        :param control: TreeView
+        :param punteiro: Posición
+        :param texto: Text
+        :param modelo: Formato de la tabla
+        :return: Nothing
+        """
         modelo[punteiro][0]=texto
 
 
     def on_mostrar_click(self, control):
+        """
+        Muestra la información sacada todos los seguros de la base de datos en el TreeView
+        :param control: Button
+        :return: Nothing
+        """
+        # self.columnas = ["IdSeguro","Seguro" "IdVendedor","Dni Cliente", "Nombre", "Apellidos", "Tiempo", "Coste", "Fecha"]
 
         self.modelo.clear()
         datos = MetodosBD.MetodosBD.listar_seguros(self)
         tamañoDatos=len(datos)
         for i in range(tamañoDatos):
-            # self.columnas = ["IdSeguro","Seguro" "IdVendedor","Dni Cliente", "Nombre", "Apellidos", "Tiempo", "Coste", "Fecha"]
 
             d1=datos[i][0]
             d2=datos[i][1]
@@ -200,6 +223,11 @@ class tablaSeguros(Gtk.Window):
 
 
     def on_consultaCB_clicked(self,control):
+        """
+        Muestra la información sacada de la base de datos buscada por Iden el TreeView
+        :param control: Button
+        :return: Nothing
+        """
 
         idSelect = self.cbIdBuscar.get_active_text()
 
@@ -219,6 +247,11 @@ class tablaSeguros(Gtk.Window):
             self.modelo.append([d1, d2, d3, d4, d5, d6, d7, d8, d9])
 
     def on_consultaTxt_clicked(self, control):
+        """
+        Muestra la información sacada de la base de datos por el nombre del Cliente en el TreeView
+        :param control: Button
+        :return: Nothing
+        """
 
         self.modelo.clear()
         nombreSelect = self.txtNombre.get_text()
@@ -242,6 +275,11 @@ class tablaSeguros(Gtk.Window):
             self.modelo.clear()
 
     def on_selection_changed(self,seleccion):
+        """
+        Metodo que recoge todos los valores seleccionados en variables al pinchar en el TreeView
+        :param seleccion: TreeView
+        :return: Variable booleana
+        """
     #["IdSeguro","Seguro" "IdVendedor","Dni Cliente", "Nombre", "Apellidos", "Tiempo", "Coste", "Fecha"]
         condicion= True
         modelo, punteiro = seleccion.get_selected()
@@ -264,6 +302,11 @@ class tablaSeguros(Gtk.Window):
 
 
     def on_crearPdf_click(self,control):
+        """
+        Metodo que crea un Pdf simulando una Factura, con la información del vendedor y del cliente
+        :param control: Button
+        :return: Nothing
+        """
 
 
         if  tablaSeguros.on_selection_changed(self,self.seleccion):
@@ -312,6 +355,11 @@ class tablaSeguros(Gtk.Window):
 
 
     def on_cerrar_clicked(self,Button):
+        """
+        Metodo para navegar a la ventana Seguros
+        :param Button: Button
+        :return: Nothing
+        """
         seguros = Seguros.seguros(self.tipo, self.id,self.nombre)
         self.set_visible(False)
 

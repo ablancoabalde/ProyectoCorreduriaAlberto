@@ -52,6 +52,11 @@ class Login(Gtk.Window):
         self.show_all()
 
     def on_iniciar_clicked(self,button):
+        """
+        Metodo para validar la entrada de un usuario
+        :param button: Button
+        :return: Nothing
+        """
 
         encontrado=MetodosBD.MetodosBD.autentificar_login(self,self.txtNombre.get_text(),self.txtPassword.get_text())
 
@@ -71,6 +76,10 @@ class Login(Gtk.Window):
                 messageDialog.destroy()
 
     def on_limpiar(self):
+        """
+         Metodo que limpia los Entrys
+        :return: Nothing
+        """
         self.txtNombre.set_text("")
         self.txtPassword.set_text("")
 
