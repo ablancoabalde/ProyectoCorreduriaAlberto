@@ -15,6 +15,8 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Clases.Images package" href="Clases.Images.html" />
+    <link rel="prev" title="BaseDatos package" href="BaseDatos.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -38,7 +40,7 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Clases.Images.html">Clases.Images package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Clases.Images.html#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Clases.Images.html#module-Clases.Images">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -47,29 +49,477 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Enlazar permanentemente con este título">¶</a></h2>
 </div>
-<div class="section" id="clases-configuracion-module">
-<h2>Clases.Configuracion module<a class="headerlink" href="#clases-configuracion-module" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="module-Clases.Configuracion">
+<span id="clases-configuracion-module"></span><h2>Clases.Configuracion module<a class="headerlink" href="#module-Clases.Configuracion" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="Clases.Configuracion.configuracion">
+<em class="property">class </em><code class="descclassname">Clases.Configuracion.</code><code class="descname">configuracion</code><span class="sig-paren">(</span><em>initTipo</em>, <em>initId</em>, <em>initNombre</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Configuracion.html#configuracion"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Configuracion.configuracion" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.Gtk.Window</span></code></p>
+<dl class="method">
+<dt id="Clases.Configuracion.configuracion.on_add_clicked">
+<code class="descname">on_add_clicked</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Configuracion.html#configuracion.on_add_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Configuracion.configuracion.on_add_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Función que llama otros metodos para validar la insercción de los datos, primero se
+autentifica que los Entrys estén llenos. Luego se llama al metodo insertar de la Clase
+MetodosBD y por último se llama al metodo limpiar para limpiar Entrys
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Configuracion.configuracion.on_autentificar">
+<code class="descname">on_autentificar</code><span class="sig-paren">(</span><em>password</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Configuracion.html#configuracion.on_autentificar"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Configuracion.configuracion.on_autentificar" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Valida que la Entry tenga contenido
+:param password: Text
+:return: Variable booleana</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Configuracion.configuracion.on_cerrar_clicked">
+<code class="descname">on_cerrar_clicked</code><span class="sig-paren">(</span><em>Button</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Configuracion.html#configuracion.on_cerrar_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Configuracion.configuracion.on_cerrar_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo para navegar a la ventana Main
+:param Button: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Configuracion.configuracion.on_limpiar">
+<code class="descname">on_limpiar</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Configuracion.html#configuracion.on_limpiar"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Configuracion.configuracion.on_limpiar" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que limpia los Entrys
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="clases-login-module">
-<h2>Clases.Login module<a class="headerlink" href="#clases-login-module" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="module-Clases.Login">
+<span id="clases-login-module"></span><h2>Clases.Login module<a class="headerlink" href="#module-Clases.Login" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="Clases.Login.Login">
+<em class="property">class </em><code class="descclassname">Clases.Login.</code><code class="descname">Login</code><a class="reference internal" href="_modules/Clases/Login.html#Login"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Login.Login" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.Gtk.Window</span></code></p>
+<dl class="method">
+<dt id="Clases.Login.Login.on_iniciar_clicked">
+<code class="descname">on_iniciar_clicked</code><span class="sig-paren">(</span><em>button</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Login.html#Login.on_iniciar_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Login.Login.on_iniciar_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo para validar la entrada de un usuario
+:param button: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Login.Login.on_limpiar">
+<code class="descname">on_limpiar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Login.html#Login.on_limpiar"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Login.Login.on_limpiar" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><blockquote>
+<div><p>Metodo que limpia los Entrys</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve</dt>
+<dd class="field-odd"><p>Nothing</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="clases-main-module">
-<h2>Clases.Main module<a class="headerlink" href="#clases-main-module" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="module-Clases.Main">
+<span id="clases-main-module"></span><h2>Clases.Main module<a class="headerlink" href="#module-Clases.Main" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="Clases.Main.Main">
+<em class="property">class </em><code class="descclassname">Clases.Main.</code><code class="descname">Main</code><span class="sig-paren">(</span><em>initTipo</em>, <em>initId</em>, <em>initNombre</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Main.html#Main"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Main.Main" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.Gtk.Window</span></code></p>
+<dl class="method">
+<dt id="Clases.Main.Main.on_cerrar_clicked">
+<code class="descname">on_cerrar_clicked</code><span class="sig-paren">(</span><em>Button</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Main.html#Main.on_cerrar_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Main.Main.on_cerrar_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo para navegar a la ventana Login
+:param Button: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Main.Main.on_configuracion_clicked">
+<code class="descname">on_configuracion_clicked</code><span class="sig-paren">(</span><em>Button</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Main.html#Main.on_configuracion_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Main.Main.on_configuracion_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo para navegar a la ventana Configuración
+:param Button: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Main.Main.on_seguros_clicked">
+<code class="descname">on_seguros_clicked</code><span class="sig-paren">(</span><em>Button</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Main.html#Main.on_seguros_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Main.Main.on_seguros_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo para navegar a la ventana Seguros
+:param Button: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Main.Main.on_vendedores_clicked">
+<code class="descname">on_vendedores_clicked</code><span class="sig-paren">(</span><em>Button</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Main.html#Main.on_vendedores_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Main.Main.on_vendedores_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo para navegar a la ventana Vendedores
+:param Button: Button
+:return: Nothing</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="clases-seguros-module">
-<h2>Clases.Seguros module<a class="headerlink" href="#clases-seguros-module" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="module-Clases.Seguros">
+<span id="clases-seguros-module"></span><h2>Clases.Seguros module<a class="headerlink" href="#module-Clases.Seguros" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="Clases.Seguros.seguros">
+<em class="property">class </em><code class="descclassname">Clases.Seguros.</code><code class="descname">seguros</code><span class="sig-paren">(</span><em>initTipo</em>, <em>initId</em>, <em>initNombre</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Seguros.html#seguros"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Seguros.seguros" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.Gtk.Window</span></code></p>
+<dl class="method">
+<dt id="Clases.Seguros.seguros.actualizar_cmbId">
+<code class="descname">actualizar_cmbId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Seguros.html#seguros.actualizar_cmbId"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Seguros.seguros.actualizar_cmbId" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que refresca la información de los Combobox
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Seguros.seguros.on_add_clicked">
+<code class="descname">on_add_clicked</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Seguros.html#seguros.on_add_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Seguros.seguros.on_add_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Función que llama otros metodos para validar la insercción de los datos, primero se
+autentifica que los Entrys estén llenos. Luego se llama al metodo insertar de la Clase
+MetodosBD, se actualizan los comboBox y por último se llama al metodo limpiar para limpiar Entrys
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Seguros.seguros.on_autentificar">
+<code class="descname">on_autentificar</code><span class="sig-paren">(</span><em>dniCliente</em>, <em>nombreCliente</em>, <em>apellidoCliente</em>, <em>seguro</em>, <em>coste</em>, <em>tiempo</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Seguros.html#seguros.on_autentificar"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Seguros.seguros.on_autentificar" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Valida que la Entry tenga contenido
+:param dniCliente: Text
+:param nombreCliente: Text
+:param apellidoCliente: Text
+:param seguro: Text
+:param coste: Int
+:param tiempo: Int
+:return: Variable booleana</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Seguros.seguros.on_cerrar_clicked">
+<code class="descname">on_cerrar_clicked</code><span class="sig-paren">(</span><em>Button</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Seguros.html#seguros.on_cerrar_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Seguros.seguros.on_cerrar_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo para navegar a la ventana Main
+:param Button: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Seguros.seguros.on_limpiar">
+<code class="descname">on_limpiar</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Seguros.html#seguros.on_limpiar"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Seguros.seguros.on_limpiar" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Medoto que limpia las cajas de texto
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Seguros.seguros.on_mostrarDatos">
+<code class="descname">on_mostrarDatos</code><span class="sig-paren">(</span><em>datos</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Seguros.html#seguros.on_mostrarDatos"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Seguros.seguros.on_mostrarDatos" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que separa los datos recogidos y luego los guarda en sus respectivos Entrys
+:param datos: Lista de datos
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Seguros.seguros.on_refreshTime">
+<code class="descname">on_refreshTime</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Seguros.html#seguros.on_refreshTime"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Seguros.seguros.on_refreshTime" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que recarga el valor de la fecha en el Entry Fecha
+:param control: Button
+:return: Noting</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Seguros.seguros.on_remove_clicked">
+<code class="descname">on_remove_clicked</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Seguros.html#seguros.on_remove_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Seguros.seguros.on_remove_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que envia el Dni seleccionado a un Metodo de la Clase MetodosBD y elimina de
+la base de datos al seguro, luego llama al metodo recarga los ComboBox y
+al de limpiar los Entrys
+:param control: Button
+:return: Nothin</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Seguros.seguros.on_tabla_vendedores_clicked">
+<code class="descname">on_tabla_vendedores_clicked</code><span class="sig-paren">(</span><em>Button</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Seguros.html#seguros.on_tabla_vendedores_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Seguros.seguros.on_tabla_vendedores_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo para navegar a la ventana TablaSeguros
+:param Button: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Seguros.seguros.update_seguro">
+<code class="descname">update_seguro</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Seguros.html#seguros.update_seguro"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Seguros.seguros.update_seguro" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que tras elegir un Dni del ComboBOx manda el Dni a un metodo
+de la Clase MetodosBD que busca el Id y devuelve los datos de este
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="clases-tablaseguros-module">
-<h2>Clases.TablaSeguros module<a class="headerlink" href="#clases-tablaseguros-module" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="module-Clases.TablaSeguros">
+<span id="clases-tablaseguros-module"></span><h2>Clases.TablaSeguros module<a class="headerlink" href="#module-Clases.TablaSeguros" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="Clases.TablaSeguros.tablaSeguros">
+<em class="property">class </em><code class="descclassname">Clases.TablaSeguros.</code><code class="descname">tablaSeguros</code><span class="sig-paren">(</span><em>initTipo</em>, <em>initId</em>, <em>initNombre</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaSeguros.html#tablaSeguros"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaSeguros.tablaSeguros" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.Gtk.Window</span></code></p>
+<dl class="method">
+<dt id="Clases.TablaSeguros.tablaSeguros.actualizar_cmbId">
+<code class="descname">actualizar_cmbId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaSeguros.html#tablaSeguros.actualizar_cmbId"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaSeguros.tablaSeguros.actualizar_cmbId" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que refresca la información de los Combobox
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Clases.TablaSeguros.tablaSeguros.celdaTexto">
+<code class="descname">celdaTexto</code><em class="property"> = None</em><a class="headerlink" href="#Clases.TablaSeguros.tablaSeguros.celdaTexto" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Con esto otro hacemos que la vista se actualice</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.TablaSeguros.tablaSeguros.on_celdaText_edited">
+<code class="descname">on_celdaText_edited</code><span class="sig-paren">(</span><em>control</em>, <em>punteiro</em>, <em>texto</em>, <em>modelo</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaSeguros.html#tablaSeguros.on_celdaText_edited"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaSeguros.tablaSeguros.on_celdaText_edited" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que permite seleccionar el TreeView para obtener los datos
+:param control: TreeView
+:param punteiro: Posición
+:param texto: Text
+:param modelo: Formato de la tabla
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.TablaSeguros.tablaSeguros.on_cerrar_clicked">
+<code class="descname">on_cerrar_clicked</code><span class="sig-paren">(</span><em>Button</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaSeguros.html#tablaSeguros.on_cerrar_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaSeguros.tablaSeguros.on_cerrar_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo para navegar a la ventana Seguros
+:param Button: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.TablaSeguros.tablaSeguros.on_consultaCB_clicked">
+<code class="descname">on_consultaCB_clicked</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaSeguros.html#tablaSeguros.on_consultaCB_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaSeguros.tablaSeguros.on_consultaCB_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Muestra la información sacada de la base de datos buscada por Iden el TreeView
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.TablaSeguros.tablaSeguros.on_consultaTxt_clicked">
+<code class="descname">on_consultaTxt_clicked</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaSeguros.html#tablaSeguros.on_consultaTxt_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaSeguros.tablaSeguros.on_consultaTxt_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Muestra la información sacada de la base de datos por el nombre del Cliente en el TreeView
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.TablaSeguros.tablaSeguros.on_crearPdf_click">
+<code class="descname">on_crearPdf_click</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaSeguros.html#tablaSeguros.on_crearPdf_click"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaSeguros.tablaSeguros.on_crearPdf_click" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que crea un Pdf simulando una Factura, con la información del vendedor y del cliente
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.TablaSeguros.tablaSeguros.on_mostrar_click">
+<code class="descname">on_mostrar_click</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaSeguros.html#tablaSeguros.on_mostrar_click"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaSeguros.tablaSeguros.on_mostrar_click" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Muestra la información sacada todos los seguros de la base de datos en el TreeView
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.TablaSeguros.tablaSeguros.on_selection_changed">
+<code class="descname">on_selection_changed</code><span class="sig-paren">(</span><em>seleccion</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaSeguros.html#tablaSeguros.on_selection_changed"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaSeguros.tablaSeguros.on_selection_changed" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que recoge todos los valores seleccionados en variables al pinchar en el TreeView
+:param seleccion: TreeView
+:return: Variable booleana</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="clases-tablavendedores-module">
-<h2>Clases.TablaVendedores module<a class="headerlink" href="#clases-tablavendedores-module" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="module-Clases.TablaVendedores">
+<span id="clases-tablavendedores-module"></span><h2>Clases.TablaVendedores module<a class="headerlink" href="#module-Clases.TablaVendedores" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="Clases.TablaVendedores.tablaVendedores">
+<em class="property">class </em><code class="descclassname">Clases.TablaVendedores.</code><code class="descname">tablaVendedores</code><span class="sig-paren">(</span><em>initTipo</em>, <em>initId</em>, <em>initNombre</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaVendedores.html#tablaVendedores"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaVendedores.tablaVendedores" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.Gtk.Window</span></code></p>
+<dl class="method">
+<dt id="Clases.TablaVendedores.tablaVendedores.actualizar_cmbDni">
+<code class="descname">actualizar_cmbDni</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaVendedores.html#tablaVendedores.actualizar_cmbDni"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaVendedores.tablaVendedores.actualizar_cmbDni" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que refresca la información de los Combobox
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Clases.TablaVendedores.tablaVendedores.celdaTexto">
+<code class="descname">celdaTexto</code><em class="property"> = None</em><a class="headerlink" href="#Clases.TablaVendedores.tablaVendedores.celdaTexto" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Con esto otro hacemos que la vista se actualice</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.TablaVendedores.tablaVendedores.on_celdaText_edited">
+<code class="descname">on_celdaText_edited</code><span class="sig-paren">(</span><em>control</em>, <em>punteiro</em>, <em>texto</em>, <em>modelo</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaVendedores.html#tablaVendedores.on_celdaText_edited"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaVendedores.tablaVendedores.on_celdaText_edited" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que permite seleccionar el TreeView para obtener los datos
+:param control: TreeView
+:param punteiro: Posición
+:param texto: Text
+:param modelo: Formato de la tabla
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.TablaVendedores.tablaVendedores.on_cerrar_clicked">
+<code class="descname">on_cerrar_clicked</code><span class="sig-paren">(</span><em>Button</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaVendedores.html#tablaVendedores.on_cerrar_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaVendedores.tablaVendedores.on_cerrar_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo para navegar a la ventana Vendedores
+:param Button: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.TablaVendedores.tablaVendedores.on_consultaCB_clicked">
+<code class="descname">on_consultaCB_clicked</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaVendedores.html#tablaVendedores.on_consultaCB_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaVendedores.tablaVendedores.on_consultaCB_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Muestra la información sacada de la base de datos sacada por el Dni en el TreeView
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.TablaVendedores.tablaVendedores.on_consultaTxt_clicked">
+<code class="descname">on_consultaTxt_clicked</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaVendedores.html#tablaVendedores.on_consultaTxt_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaVendedores.tablaVendedores.on_consultaTxt_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Muestra la información sacada de la base de datos por el nombre del Vendedor en el TreeView
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.TablaVendedores.tablaVendedores.on_crearPdf_click">
+<code class="descname">on_crearPdf_click</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaVendedores.html#tablaVendedores.on_crearPdf_click"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaVendedores.tablaVendedores.on_crearPdf_click" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que crea un pdf que contiene una gráfica con las ventas de los vendedores
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.TablaVendedores.tablaVendedores.on_mostrar_click">
+<code class="descname">on_mostrar_click</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/TablaVendedores.html#tablaVendedores.on_mostrar_click"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.TablaVendedores.tablaVendedores.on_mostrar_click" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Muestra la información sacada todos los vendedores de la base de datos en el TreeView
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="clases-vendedores-module">
-<h2>Clases.Vendedores module<a class="headerlink" href="#clases-vendedores-module" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="module-Clases.Vendedores">
+<span id="clases-vendedores-module"></span><h2>Clases.Vendedores module<a class="headerlink" href="#module-Clases.Vendedores" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="class">
+<dt id="Clases.Vendedores.vendedores">
+<em class="property">class </em><code class="descclassname">Clases.Vendedores.</code><code class="descname">vendedores</code><span class="sig-paren">(</span><em>initTipo</em>, <em>initId</em>, <em>initNombre</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Vendedores.html#vendedores"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Vendedores.vendedores" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.Gtk.Window</span></code></p>
+<dl class="method">
+<dt id="Clases.Vendedores.vendedores.actualizar_cmbDni">
+<code class="descname">actualizar_cmbDni</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Vendedores.html#vendedores.actualizar_cmbDni"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Vendedores.vendedores.actualizar_cmbDni" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que refresca la información de los Combobox
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Vendedores.vendedores.on_add_clicked">
+<code class="descname">on_add_clicked</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Vendedores.html#vendedores.on_add_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Vendedores.vendedores.on_add_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Función que llama otros metodos para validar la insercción de los datos, primero se
+autentifica que los Entrys estén llenos. Luego se llama al metodo insertar de la Clase
+MetodosBD se actualizan los comboBox y por último se llama al metodo limpiar para limpiar Entrys
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Vendedores.vendedores.on_autentificar">
+<code class="descname">on_autentificar</code><span class="sig-paren">(</span><em>dni</em>, <em>nom</em>, <em>apellidos</em>, <em>telf</em>, <em>zona</em>, <em>nacion</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Vendedores.html#vendedores.on_autentificar"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Vendedores.vendedores.on_autentificar" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Valida que la Entry tenga contenido
+:param dni: Text
+:param nom: Text
+:param apellidos: Text
+:param telf: Text
+:param zona: Text
+:param nacion: Text
+:return: Variable booleana</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Vendedores.vendedores.on_cerrar_clicked">
+<code class="descname">on_cerrar_clicked</code><span class="sig-paren">(</span><em>Button</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Vendedores.html#vendedores.on_cerrar_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Vendedores.vendedores.on_cerrar_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo para navegar a la ventana Main
+:param Button: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Vendedores.vendedores.on_limpiar">
+<code class="descname">on_limpiar</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Vendedores.html#vendedores.on_limpiar"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Vendedores.vendedores.on_limpiar" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Medoto que limpia las cajas de texto
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Vendedores.vendedores.on_mostrarDatos">
+<code class="descname">on_mostrarDatos</code><span class="sig-paren">(</span><em>datos</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Vendedores.html#vendedores.on_mostrarDatos"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Vendedores.vendedores.on_mostrarDatos" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que separa los datos recogidos y luego los guarda en sus respectivos Entrys
+:param datos: Lista de datos
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Vendedores.vendedores.on_opcion_clicked">
+<code class="descname">on_opcion_clicked</code><span class="sig-paren">(</span><em>control</em>, <em>ch1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Vendedores.html#vendedores.on_opcion_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Vendedores.vendedores.on_opcion_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Clases.Vendedores.vendedores.on_refreshTime">
+<code class="descname">on_refreshTime</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Vendedores.html#vendedores.on_refreshTime"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Vendedores.vendedores.on_refreshTime" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que recarga el valor de la fecha en el Entry Fecha
+:param control: Button
+:return: Noting</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Vendedores.vendedores.on_remove_clicked">
+<code class="descname">on_remove_clicked</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Vendedores.html#vendedores.on_remove_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Vendedores.vendedores.on_remove_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que envia el Dni seleccionado a un Metodo de la Clase MetodosBD y elimina de
+la base de datos al vendedor, luego llama al metodo recarga los ComboBox y
+al de limpiar los Entrys
+:param control: Button
+:return: Nothin</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Vendedores.vendedores.on_tabla_vendedores_clicked">
+<code class="descname">on_tabla_vendedores_clicked</code><span class="sig-paren">(</span><em>Button</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Vendedores.html#vendedores.on_tabla_vendedores_clicked"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Vendedores.vendedores.on_tabla_vendedores_clicked" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo para navegar a la ventana TablaVendedores
+:param Button: Button
+:return: Nothing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Clases.Vendedores.vendedores.update_vendedor">
+<code class="descname">update_vendedor</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Clases/Vendedores.html#vendedores.update_vendedor"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#Clases.Vendedores.vendedores.update_vendedor" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Metodo que tras elegir un Dni del ComboBOx manda el Dni a un metodo
+de la Clase MetodosBD que busca el Dni y devuelve los datos de este
+:param control: Button
+:return: Nothing</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="module-Clases">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Clases" title="Enlazar permanentemente con este título">¶</a></h2>
 </div>
 </div>
 
@@ -90,11 +540,24 @@
 
 
 <h3>Navegación</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="doc.html">Proyecto Correduría de seguros Alberto</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ProyectoCorreduriaAlberto</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="BaseDatos.html">BaseDatos package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Clases package</a></li>
+</ul>
+</li>
+</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">ProyectoCorreduriaAlberto</a><ul>
+      <li>Previous: <a href="BaseDatos.html" title="capítulo anterior">BaseDatos package</a></li>
+      <li>Next: <a href="Clases.Images.html" title="próximo capítulo">Clases.Images package</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>

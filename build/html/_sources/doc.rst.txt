@@ -1,11 +1,11 @@
-Proyecto Correduría de seguros Alberto
+Guia de uso de Proyecto Correduría de seguros Alberto
 **************************************
 
 Este proyecto intenta simular una gestión de una correduría, que incluye Vendedores y Seguros en su Base de Datos.
 
 
 Listado de Clases
-=================
+-----------------
 
 -BaseDatos
 	1.MetodosBD
@@ -57,8 +57,8 @@ Imagenes
 
 Estas imagenes son para la ventana Login
 
-.. figure:: _static/user.png
+.. figure:: ../Clases/Images/user.png
    :align: center
 
-.. figure:: _static/passw.png
+.. figure:: ../Clases/Images//passw.png
    :align: center
