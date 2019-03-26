@@ -23,7 +23,7 @@ class tablaVendedores(Gtk.Window):
         :param initNombre: Text
         """
 
-        Gtk.Window.__init__(self, title="Seguros "+str(initNombre))
+        Gtk.Window.__init__(self, title="Tabla Seguros "+str(initNombre))
         self.set_default_size(600, 400)
         self.set_resizable(False)
         self.set_position(Gtk.WindowPosition.CENTER)
