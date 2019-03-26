@@ -57,8 +57,8 @@ Imagenes
 
 Estas imagenes son para la ventana Login
 
-.. figure:: _static/passw.png
+.. figure:: _static/user.png
    :align: center
 
-.. figure:: _static/user.png
+.. figure:: _static/passw.png
    :align: center
