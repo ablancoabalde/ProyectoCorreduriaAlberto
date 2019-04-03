@@ -1,5 +1,5 @@
 import gi
-
+import webbrowser as wb
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 from BaseDatos import MetodosBD
@@ -311,6 +311,7 @@ class tablaSeguros(Gtk.Window):
 
         if  tablaSeguros.on_selection_changed(self,self.seleccion):
 
+            nombreFactura=str("Factura" +self.sltNomCliente+ ".pdf")
             aux = canvas.Canvas("Factura" +self.sltNomCliente+ ".pdf")
             obxetoTexto = aux.beginText()
             obxetoTexto.setFont("Courier-Bold", 14)
@@ -345,6 +346,10 @@ class tablaSeguros(Gtk.Window):
             aux.showPage()
 
             aux.save()
+
+           # Función para abrir el Pdf al momento de crearlo
+            wb.open_new_tab('/home/kazuto/PycharmProjects/ProyectoCorreduriaAlberto/Clases/'+nombreFactura)
+
         else:
             messageDialog = Gtk.MessageDialog(parent=self, flags=Gtk.DialogFlags.MODAL, type=Gtk.MessageType.WARNING,
                                               buttons=Gtk.ButtonsType.OK, message_format="Seleccione un Cliente")
